@@ -10,14 +10,15 @@ var program = require('commander'),
 
 program
     .version('0.0.1')
-    .option('-p, --port <location>', 'Specifiy a port to run on');
+    .option('-p, --port <location>', 'Specifiy a port to run on')
+    .option('--protocol <location>', 'Specify protocol');
 
 program
     .command('start')
     .description('Starts up an SeoServer on default port 3000')
     .action(function() {
         child = new (forever.Monitor)(__dirname + '/../lib/seoserver.js', {
-            options: [program.port]
+            options: [program.port, program.protocol]
         });
         child.start();
         console.log(__dirname, 'SeoServer successfully started');
