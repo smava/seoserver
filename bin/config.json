@@ -1,5 +1,5 @@
 {
-    "verbose": true,
+    "verbose": false,
     "debug": false,
     "checkCompleteInterval": 100,
     "checkCompleteTimeDiff": 500,
